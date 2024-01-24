@@ -8,10 +8,7 @@ const fetchData = async () => {
   try {
     const response = await fetch(`${process.env.API_URL}/products/all-active`);
     const data = await response.json();
-    apiData.value = data.map(product => ({
-      ...product,
-      image: `${process.env.API_RANDOM_IMAGE_URL}${Math.random()}`,
-    }));
+    apiData.value = data
   } catch (error) {
     console.log('Error fetching data:', error);
   }
@@ -76,7 +73,7 @@ div
 
   div(v-else class="q-pa-md row items-center justify-center q-gutter-md")
     q-card(v-for="product in apiData" :key="product._id" class="my-card" flat bordered)
-      q-img(:src="product.image")
+      q-img()
 
       q-card-section
         div.text-overline.text-orange-9 ${{ product.price }}
