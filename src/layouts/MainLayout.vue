@@ -13,7 +13,7 @@
 
       <q-tabs align="left">
         <q-route-tab to="/" label="About" />
-        <q-route-tab to="/test" label="Test" />
+        <!-- <q-route-tab to="/test" label="Test" /> -->
         <q-route-tab to="/products" label="Products" />
         <q-route-tab to="/add-product" label="Add Product" />
       </q-tabs>
